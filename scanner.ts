@@ -5,7 +5,7 @@ export class Scanner {
   private rl = createInterface({ input, output });
 
   async nextLine(prompt = ""): Promise<string> {
-    return await this.rl.question(prompt);
+    return this.rl.question(prompt);
   }
 
   async nextInt(prompt = ""): Promise<number> {
@@ -20,7 +20,8 @@ export class Scanner {
   async nextFloat(prompt = ""): Promise<number> {
     while (true) {
       const answer = await this.rl.question(prompt);
-      const num = Number(answer);
+      const sanitized = answer.replace(",", ".");
+      const num = Number(sanitized);
       if (!isNaN(num)) return num;
       console.log("Por favor, digite um número válido.");
     }
