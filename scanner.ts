@@ -17,7 +17,7 @@ export class Scanner {
     }
   }
 
-  async nextFloat(prompt = ""): Promise<number> {
+  async nextDouble(prompt = ""): Promise<number> {
     while (true) {
       const answer = await this.rl.question(prompt);
       const sanitized = answer.replace(",", ".");
