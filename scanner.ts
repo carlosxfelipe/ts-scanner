@@ -5,7 +5,8 @@ export class Scanner {
   private rl = createInterface({ input, output });
 
   async nextLine(prompt = ""): Promise<string> {
-    return this.rl.question(prompt);
+    const answer = await this.rl.question(prompt);
+    return answer.trim();
   }
 
   async nextInt(prompt = ""): Promise<number> {
