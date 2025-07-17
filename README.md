@@ -5,7 +5,7 @@ Projeto simples que simula um `Scanner` estilo Java para ler entradas do termina
 ```ts
 import { Scanner } from "./scanner";
 
-const scanner = new Scanner();
+const scanner = new Scanner("pt");
 
 const nome = await scanner.nextLine("Qual seu nome? ");
 const idade = await scanner.nextInt("Qual sua idade? ");
